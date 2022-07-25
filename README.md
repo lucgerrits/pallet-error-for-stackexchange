@@ -1,6 +1,10 @@
 >Note: This node is based on polkadot-v0.9.24 (using: git clone --depth 1 --branch polkadot-v0.9.24 https://github.com/substrate-developer-hub/substrate-parachain-template
 )
 
+>CMD to test the code: cargo build --release --features runtime-benchmarks && ./target/release/parachain-collator benchmark pallet --chain=dev --pallet="pallet_sim_renault" --extrinsic="*" --wasm-execution=compiled --execution=wasm --repeat=20 --steps=50 --output=./pallets/sim_renault/src/weights.rs --template=./frame-weight-template.hbs
+
+> Solution: add `use super::*;` in lib.rs of the pallet.
+
 # Substrate Cumulus Parachain Template
 
 A new [Cumulus](https://github.com/paritytech/cumulus/)-based Substrate node, ready for hacking ☁️..
